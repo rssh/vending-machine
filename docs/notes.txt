@@ -1,0 +1,30 @@
+
+
+Questions:
+
+  1. Why did you choose the frameworks and libraries you did?
+   Plain Scala.  Plain - because we need nothing special.  Scala - because we have no specific requirements (such as latency limits below jvm-gc or compability) against one.
+
+  2. What functionality did you choose to focus on? To omit? Why?
+   Fully Model state (and implement non-trivial parts, such as work with coins).
+   Omit - administrative interface, banking interface, UI
+
+  3. What were your design/architecture considerations?
+   1. Represent input and output actions as case classes (see actions.scala)
+   2. Model actions as functions which change state
+   3. Model vending machine by applying functions to mutable state
+
+  4. If you had time to continue your work and finish the vending, how would you prioritize it.
+   1. Functions too long, think how to split one.
+   2. Implement administrative operations.  Think how to represent other systesm (administrator, banl) in code
+   3. Add functionality of using banking card
+   4. State inside trait - is not ideal, think how to restructise this
+   5. Infrastructure 
+
+
+Open Questions:
+   1. How we model interfaces with external systems ?  
+     Answer - will think later
+   2. Ara our vending machine will support banking cards ?
+     Answer - in next release ;)
+
